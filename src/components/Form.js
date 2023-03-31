@@ -3,9 +3,14 @@ const Form = ({ todo, setTodo, todoList, setTodoList }) => {
     const handleTodo = (event) => {
         setTodo(event.target.value)
     };
+
+    const createId = () => { 
+        return Math.floor(Math.random() * 10000);
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        setTodoList([...todoList, {name: todo,id:todo}])
+        setTodoList([...todoList, {name: todo,id: createId()}])
         console.log(todoList)
         setTodo("")
     }
